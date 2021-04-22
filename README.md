@@ -27,7 +27,7 @@
 16. Moderate
 17. Hard
 
-![][1]
+![Cracking the Coding Skills][1]
 
 
 [1]: cracking_the_coding_skills.png
