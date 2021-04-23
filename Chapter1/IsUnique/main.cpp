@@ -8,7 +8,7 @@ Q.  Implement an algorithm to determine if a string has all unique characters. W
 
 // time-complexity: O(N)
 // space-complexity: O(N)
-bool isAllUniqueCharacters(string str)
+bool isAllUniqueCharacters(const string& str)
 {
     unordered_set<char> mySet;
     for(auto ch : str)
@@ -26,7 +26,7 @@ bool isAllUniqueCharacters(string str)
 // Without additional data structures
 // time-complexity : O(nlogn)
 // space-complexity : O(1)
-bool isAllUniqueCharacters2(string input)
+bool isAllUniqueCharacters2(string& input)
 {
     sort(input.begin(), input.end()); 
 
