@@ -38,8 +38,6 @@ bool isAllUniqueCharacters2(string& input)
     return true;
 }
 
-
-
 int main()
 {
     string input = "";
