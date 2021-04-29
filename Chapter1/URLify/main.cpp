@@ -13,8 +13,8 @@ using namespace std;
 */
 
 
-// time-complexity : O()
-// space-complexity : O()
+// time-complexity : O(n)
+// space-complexity : O(n)
 void URLify(string& input)
 {
     string temp;
