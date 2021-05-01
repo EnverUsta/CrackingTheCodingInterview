@@ -7,6 +7,11 @@ using namespace std;
         between two nodes.
 */
 
+/*
+    Don't forget!
+    This question can also be solved via bi-directional search.
+*/
+
 // Let's assume directed graph
 class Node
 {
