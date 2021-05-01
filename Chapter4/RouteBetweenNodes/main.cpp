@@ -2,6 +2,11 @@
 
 using namespace std;
 
+/*
+    Q.  Given a directed graph, design an algorithm to find out whether there is a route
+        between two nodes.
+*/
+
 // Let's assume directed graph
 class Node
 {
@@ -22,6 +27,9 @@ void insert(Node* a, Node* b)
     a->neighbors.push_back(b);
 }
 
+
+// These dfs and bfs algoritms are just reminders.
+// Yes, sometimes I forget their implementations :(
 void dfs(Node* start, vector<bool>& visited)
 {
     if(start == nullptr)    return;
