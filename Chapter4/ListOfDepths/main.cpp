@@ -46,7 +46,6 @@ TreeNode* insertTree(TreeNode* root, int val)
     return root;
 }   
 
-
 void insert(ListNode** root, int val)
 {
     ListNode* temp = new ListNode(val);
