@@ -15,7 +15,7 @@ public:
 
 TreeNode* insertTree(TreeNode* root, int val);
 
-pair<int, bool> helper(TreeNode* root)
+pair<int, bool> helperMine(TreeNode* root)
 {
     bool initLeft = false;
     bool initRight = false;
@@ -24,12 +24,12 @@ pair<int, bool> helper(TreeNode* root)
 
     if(root->left != nullptr)
     {
-        left = helper(root->left);
+        left = helperMine(root->left);
         initLeft = true;
     }
     if(root->right != nullptr)
     {
-        right = helper(root->right);
+        right = helperMine(root->right);
         initRight = true;
     }
 
@@ -69,10 +69,31 @@ pair<int, bool> helper(TreeNode* root)
         return make_pair(root->val, true);
 }
 
+bool validateBSTMine(TreeNode* root)
+{
+    auto pair = helperMine(root);
+    return pair.second;
+}
+
+
+// This solution makes much more sense :)
+bool helper(TreeNode* root, int min, int max)
+{
+    if(root == nullptr)
+        return true;
+
+    if(root->val < min || root->val > max)
+        return false;
+
+    return helper(root->left, min, root->val-1) && helper(root->right, root->val+1, max);
+}
+
 bool validateBST(TreeNode* root)
 {
-    auto pair = helper(root);
-    return pair.second;
+    int minI = std::numeric_limits<int>::min();
+    int maxI = std::numeric_limits<int>::max();
+
+    return helper(root, minI, maxI);
 }
 
 int main()
@@ -87,9 +108,6 @@ int main()
 
     cout << validateBST(root) << '\n';
 }
-
-
-
 
 TreeNode* insertTree(TreeNode* root, int val)
 {
